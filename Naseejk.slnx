@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Naseejk-Client/" />
+  <Project Path="Naseejk.Api/Naseejk.Api.csproj" Id="447c2001-3394-4266-9d53-5064aa45e1fc" />
+  <Project Path="Naseejk.core/Naseejk.core.csproj" Id="8c179e30-3f8c-4087-b9e8-437a51c62b9d" />
+  <Project Path="Naseejk.Identity/Naseejk.Identity.csproj" Id="e1c06c77-767b-41e8-922c-e4a32243cd9f" />
+  <Project Path="Naseejk.Infrastructure/Naseejk.Infrastructure.csproj" Id="787762c1-e048-490f-8278-e31ae5b86632" />
+  <Project Path="Naseejk.Tests/Naseejk.Tests.csproj" Id="7aaff91a-09e7-4172-9b23-7cdd7740f46d" />
+</Solution>

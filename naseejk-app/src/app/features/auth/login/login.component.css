@@ -1,0 +1,193 @@
+/* ── Container ── */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 52px 44px 40px;
+  width: 100%;
+  max-width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: var(--ink-card);
+  background-image: radial-gradient(
+    ellipse 90% 50% at 50% 0%,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 70%
+  );
+
+  border: 1px solid var(--gold-dim);
+  border-radius: 2px;
+  animation: rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Top gold line */
+.login-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  right: 15%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+
+/* Corner bracket — bottom right */
+.login-container::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 16px;
+  height: 16px;
+  border-right: 1px solid var(--gold);
+  border-bottom: 1px solid var(--gold);
+  opacity: 0.5;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 20px));
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* ── Heading ── */
+.login-container h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 1.85rem;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ── Subtitle ── */
+.login-container > p {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+/* ── Microsoft button ── */
+.btn-microsoft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--ink-line);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-microsoft::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.05) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.btn-microsoft:hover::before {
+  opacity: 1;
+}
+
+.btn-microsoft:hover {
+  border-color: var(--gold-hover);
+}
+
+.btn-microsoft:active {
+  transform: scale(0.99);
+}
+
+/* ── HR divider with data-content ── */
+hr[data-content] {
+  border: none;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 1px;
+  background: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+hr[data-content]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--ink-line);
+}
+
+hr[data-content]::after {
+  content: attr(data-content);
+  position: relative;
+  z-index: 1;
+  background: var(--ink-card);
+  padding: 0 14px;
+  font-size: 0.72rem;
+  font-family: 'Tajawal', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: var(--text-faint);
+}
+
+/* ── Google button wrapper ── */
+.google-button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  filter: grayscale(0.1) brightness(0.92);
+  transition: filter 0.25s ease;
+}
+
+.google-button-wrapper:hover {
+  filter: grayscale(0) brightness(1);
+}
+
+/* ── Footer ── */
+.footer {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ink-line);
+  width: 100%;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.68rem;
+  font-weight: 300;
+  color: var(--text-faint);
+  letter-spacing: 0.05em;
+}

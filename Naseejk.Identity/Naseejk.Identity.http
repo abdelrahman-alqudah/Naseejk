@@ -1,0 +1,6 @@
+@Naseejk.Identity_HostAddress = http://localhost:5231
+
+GET {{Naseejk.Identity_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

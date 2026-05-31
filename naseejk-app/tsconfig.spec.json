@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/spec",
+    "rootDir": "src",
+    "types": [
+      "jasmine",
+      "node" // المترجم يبحث عن @types/node الآن
+    ]
+  },
+  "include": [
+    "src/**/*.spec.ts",
+    "src/**/*.d.ts"
+, "src/app/core/interceptors/auth-interceptor.spec.ts", "src/app/features/dashboard/dashboard.component.spec.ts"  ]
+}

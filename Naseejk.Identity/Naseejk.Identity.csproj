@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AssemblyName>Naseejk.Identity</AssemblyName>
+		<RootNamespace>Naseejk.Identity</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- توحيد مكتبات الهوية لضمان استقرار الـ Runtime -->
+		<PackageReference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect" Version="8.0.1" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="8.0.1" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.0.1" />
+
+		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.10" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10" />
+
+		<PackageReference Include="OpenIddict.AspNetCore" Version="5.8.0" />
+		<PackageReference Include="OpenIddict.EntityFrameworkCore" Version="5.8.0" />
+		<PackageReference Include="OpenIddict.Server.AspNetCore" Version="5.8.0" />
+		<PackageReference Include="OpenIddict.Validation.AspNetCore" Version="5.8.0" />
+		<PackageReference Include="OpenIddict.Quartz" Version="5.8.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Naseejk.Infrastructure\Naseejk.Infrastructure.csproj" />
+		<ProjectReference Include="..\Naseejk.core\Naseejk.core.csproj" />
+	</ItemGroup>
+</Project>

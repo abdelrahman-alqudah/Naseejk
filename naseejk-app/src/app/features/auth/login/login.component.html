@@ -1,0 +1,22 @@
+<div class="login-container">
+  <h1>Naseejk Identity Hub</h1>
+  <p>بوابتك الآمنة للأنظمة المركزية</p>
+
+  <button class="btn-microsoft" (click)="signInWithMicrosoft()">Sign in with Microsoft</button>
+
+  <hr data-content="أو" />
+
+  <div class="google-button-wrapper">
+    <asl-google-signin-button
+      type="standard"
+      size="large"
+      theme="filled_black"
+      text="signin_with"
+      [width]="312"
+    >
+    </asl-google-signin-button>
+  </div>
+  <div class="footer">
+    <p>© 2026 Naseejk System. All rights reserved.</p>
+  </div>
+</div>

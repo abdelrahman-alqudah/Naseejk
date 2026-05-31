@@ -1,0 +1,161 @@
+/* src/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Tajawal:wght@200;300;400;500&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Gold palette */
+  --gold: #c9a84c;
+  --gold-light: #e2c97e;
+  --gold-dim: rgba(201, 168, 76, 0.16);
+  --gold-hover: rgba(201, 168, 76, 0.32);
+  --gold-glow: rgba(201, 168, 76, 0.07);
+
+  /* Ink palette */
+  --ink: #07070d;
+  --ink-card: #0d0d17;
+  --ink-raised: #121220;
+  --ink-line: rgba(255, 255, 255, 0.055);
+  --ink-line-gold: rgba(201, 168, 76, 0.14);
+
+  /* Typography */
+  --text-primary: #ede8df;
+  --text-secondary: rgba(237, 232, 223, 0.65);
+  --text-muted: rgba(237, 232, 223, 0.38);
+  --text-faint: rgba(237, 232, 223, 0.18);
+
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Tajawal', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 28px;
+  --space-xl: 44px;
+  --space-2xl: 72px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 180ms;
+  --duration-base: 280ms;
+  --duration-slow: 500ms;
+}
+
+/* ── Reset ── */
+html {
+  font-size: 16px;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100%;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--text-primary);
+  background-color: var(--ink);
+  direction: rtl;
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(ellipse 75% 55% at 50% 42%, var(--gold-glow) 0%, transparent 68%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 59px,
+      rgba(201, 168, 76, 0.02) 59px,
+      rgba(201, 168, 76, 0.02) 60px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 59px,
+      rgba(201, 168, 76, 0.02) 59px,
+      rgba(201, 168, 76, 0.02) 60px
+    );
+}
+
+/* ── Angular root fills viewport ── */
+/* This is the key fix: make the router host fill full height
+   so flexbox centering works inside components */
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Typography ── */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+h2 {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+}
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+}
+
+p {
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+a {
+  color: var(--gold);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+a:hover {
+  color: var(--gold-light);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dim);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.35);
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(201, 168, 76, 0.2);
+  color: var(--text-primary);
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 1px solid var(--gold-dim);
+  outline-offset: 3px;
+}
